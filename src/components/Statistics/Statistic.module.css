@@ -1,0 +1,9 @@
+.title {
+  text-align: center;
+}
+
+.statList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
