@@ -3,14 +3,14 @@ import s from './Statistic.module.css';
 
 export default function Statistics({ stats, title }) {
   return (
-    <section className="statistics">
+    <section className={s.statistics}>
       {title && <h2 className={s.title}>{title}</h2>}
 
       <ul className={s.statList}>
         {stats.map(({ id, label, percentage }) => {
           return (
-            <li className="item" key={id}>
-              <span className="label">{label}</span>
+            <li className={s.item} key={id} style={{backgroundColor: generateColor()}}>
+              <span className={s.label}>{label}</span>
               <span className="percentage">{percentage}%</span>
             </li>
           );
@@ -18,6 +18,10 @@ export default function Statistics({ stats, title }) {
       </ul>
     </section>
   );
+}
+
+function generateColor() {
+  return '#' + Math.floor(Math.random()*16777215).toString(16)
 }
 
 Statistics.propTypes = {
